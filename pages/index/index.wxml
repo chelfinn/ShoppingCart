@@ -1,0 +1,64 @@
+<!-- 购物车 -->
+<view wx:if="{{hasList}}" class='page'>
+  <!-- 编辑 -->
+  <view class='work'>
+    <view class='work-left'>共{{cart_count}}件有效商品</view>
+    <label class='work-right {{red ? "red":""}}' bindtap='btn_edit'>{{edit_name}}</label>
+  </view>
+  <!-- 列表 -->
+  <view class='list'>
+    <view class='only' wx:for="{{cart}}" wx:key="index" wx:for-index="index">
+      <view class='storename'>
+        <image wx:if="{{item.selected}}" data-index="{{index}}" bindtap='selectStoreGoods' class='img' src='https://www.zhuisushangcheng.com/data/upload/applet/gou.png'></image>       
+        <image wx:else class='img' data-index="{{index}}" bindtap='selectStoreGoods' src='https://www.zhuisushangcheng.com/data/upload/applet/circle.png'></image>                               
+        <image class='img1' src='https://www.zhuisushangcheng.com/data/upload/applet/pay.png'></image>
+        <text class='txt' data-store_id='{{item.store_id}}' bindtap='toStore'>{{item.store_name}}</text>
+      </view>
+
+      <view class='goods-list' wx:for="{{item.goods}}" wx:for-item="goods" wx:for-index="idx" wx:key="">
+        <image wx:if="{{goods.selected}}" data-idx="{{idx}}" data-index="{{index}}" bindtap='selectList' class='img3' src='https://www.zhuisushangcheng.com/data/upload/applet/gou.png'></image>       
+        <image wx:else class='img3' data-idx="{{idx}}" data-index="{{index}}" bindtap='selectList' src='https://www.zhuisushangcheng.com/data/upload/applet/circle.png'></image>                               
+        <image class='img4' data-store_id='{{item.store_id}}' bindtap='toStore' src='{{goods.goods_image_url}}'></image>
+        <view class='goods-name'>
+          <view class='name' data-cart_id="{{goods.cart_id}}">{{goods.goods_name}}</view>
+          <view class='select' data-store_id='{{item.store_id}}' bindtap='toStore' wx:if="{{goods.goods_spec}}">已选择：{{goods.goods_spec}}</view>
+          <view class='price'>
+            <view class='price-r'>￥<text>{{goods.goods_price}}</text></view>
+            <view wx:if='{{show}}' class='count'>x{{goods.goods_num}}</view>
+            <view wx:else class='cont_btn'>
+              <button class="add" bindtap="minuAcvive" data-idx="{{idx}}" data-index="{{index}}" data-goods_num="{{goods.goods_num}}" data-cart_id="{{goods.cart_id}}">-</button>
+              <input class="count_shu" value="{{goods.goods_num}}" disabled />
+              <button class="minu" bindtap="addActive" data-idx="{{idx}}" data-index="{{index}}" data-goods_num="{{goods.goods_num}}" data-cart_id="{{goods.cart_id}}">+</button>
+            </view>
+          </view>
+        </view>
+        <image class='img5' src='{{item.goods_kan}}'></image>                   
+      </view>
+    </view>
+    <!-- 固定底部 -->
+    <view class='cont_bot' wx:if="{{edit}}">
+      <view class='sel_img' bindtap='selectAll'>
+        <image wx:if="{{selectAllStatus}}" class='img' src='https://www.zhuisushangcheng.com/data/upload/applet/gou.png' data-index="{{index}}"></image>
+        <image wx:else class='img' src='https://www.zhuisushangcheng.com/data/upload/applet/circle.png'></image>
+        <text class='sel_cont_name'>全选</text>
+      </view>
+      <view class='cont_price'>合计总金额：<text>￥<text>{{totalPrice}}</text></text></view>
+      <view class='cont_total' bindtap='buysumbit'>结算</view>
+    </view>
+    <!-- 删除 -->
+    <view class='cont_bot' wx:else>
+      <view class='sel_img' bindtap='selectAll'>
+        <image wx:if="{{selectAllStatus}}" class='img' src='https://www.zhuisushangcheng.com/data/upload/applet/gou.png' data-index="{{index}}"></image>
+        <image wx:else class='img' src='https://www.zhuisushangcheng.com/data/upload/applet/circle.png'></image>
+        <text class='sel_cont_name'>全选</text> 
+      </view>
+      <view class='del_btn' bindtap='deleteList'>删除</view>
+    </view>
+  </view>
+</view>
+<view wx:else class='box'>
+  <view class='cart'>
+    <view class='cart_txt'>还没有商品哦~</view>
+    <text class='goshopping'>去逛逛</text>
+  </view>
+</view>

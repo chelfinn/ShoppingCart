@@ -1,0 +1,240 @@
+/* pages/cart/index.wxss */
+page{
+  background-color: rgb(229, 229, 229);
+  color: rgb(70, 70, 70);
+}
+.page{
+  padding-bottom: 98rpx;
+}
+.work {
+  height: 88rpx;
+  line-height: 88rpx;
+  padding: 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid rgb(229, 229, 229);
+  background: #fff;
+}
+.work-left {
+  color: rgb(133, 133, 133);
+  font-size: 24rpx;
+}
+.work-right {
+  color: rgb(149, 149, 149);
+  font-size: 32rpx;
+}
+.red {
+  color: rgb(219, 72, 93);
+}
+.list {
+  background: #fff;
+}
+.only {
+  padding: 0 24rpx;
+  border-bottom: 1rpx solid rgb(246, 246, 246);
+}
+.storename {
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 4rpx solid rgb(246, 246, 246);
+}
+.img {
+  width: 64rpx;
+  height: 64rpx;
+}
+.img1 {
+  width: 40rpx;
+  height: 40rpx;
+  padding: 0 20rpx 0 12rpx;
+}
+.txt {
+  font-size: 28rpx;
+}
+.goods-list {
+  height: 230rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1rpx solid rgb(246, 246, 246);
+}
+.goods-list:last-child {
+  border-bottom: none;
+}
+.img3 {
+  height: 56rpx;
+  width: 56rpx;
+}
+.img4 {
+  width: 160rpx;
+  height: 160rpx;
+  padding: 0 40rpx 0 20rpx;
+}
+.goods-name {
+  flex: 1;
+  word-break: break-all;
+}
+.name {
+  font-size: 28rpx;
+}
+.select {
+  font-size: 18rpx;
+  color: rgb(106, 106, 106);
+  margin-top: 32rpx;
+}
+.price {
+  display: flex;
+  height: 48rpx;
+  line-height: 48rpx;
+  justify-content: space-between;
+}
+.price-r {
+  color: rgb(225, 25, 70);
+  font-size: 24rpx;
+}
+.price-r text {
+  font-size: 32rpx;
+}
+.count {
+  font-size: 24rpx;
+}
+.img5 {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 34rpx;
+  right: 0;
+}
+/* 固定底部 */
+.cont_bot, .cont_bot_btn { 
+  height: 98rpx;
+  line-height: 98rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-top: 2rpx solid rgb(246, 246, 246);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+.selected {
+  display: flex;
+  font-size: 32rpx;
+  flex: 1;
+}
+.sel_img {
+  line-height: 98rpx;
+  display: flex;
+  align-items: center;
+  font-size: 32rpx;
+  margin-left: 16rpx;
+}
+.sel_cont_name {
+  padding-left: 14rpx;
+}
+.cont_price {
+  font-size: 28rpx;
+  color: rgb(87, 87, 87);
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  padding-right: 18rpx;
+}
+.cont_price text {
+  color: rgb(229, 25, 70);
+  font-size: 20rpx;
+}
+.cont_price text text {
+  font-size: 36rpx;
+}
+.cont_total {
+  background: rgb(218, 70, 91);
+  color: #fff;
+  font-size: 32rpx;
+  width: 200rpx;
+  text-align: center;
+}
+.cont_total_btn {
+  width: 581rpx;
+  color: #fff;
+  font-size: 32rpx;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: flex-end;
+}
+.box {
+  display: flex;
+  justify-content: center;
+}
+.cart {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+.cart_img {
+  width: 360rpx;
+  height: 360rpx;
+}
+.cart_txt {
+  font-size: 32rpx;
+  color: rgb(177, 177, 177);
+  text-align: center;
+  margin: 50rpx 0 24rpx 0;
+}
+.goshopping {
+  height: 56rpx;
+  line-height: 56rpx;
+  display: inline-block;
+  width: 202rpx;
+  border: 1rpx solid rgb(218, 70, 91);
+  color: rgb(218, 70, 91);
+  font-size: 32rpx;
+  text-align: center;
+}
+.del_btn {
+  width: 200rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #ccc;
+  font-size: 32rpx;
+  border-radius: 0;
+}
+.cont_btn {
+  display: flex;
+}
+.add, .minu, .count_shu {
+  width: 48rpx;
+  height: 48rpx;
+  line-height: 48rpx;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  color: rgb(106, 106, 106);
+}
+.count_shu {
+  display: flex;
+  font-size: 24rpx;
+  justify-content: center;
+  background: rgb(248, 248, 248);
+  margin: 0 8rpx;
+}
+.bottom {
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: #fff;
+  background: rgb(235, 97, 83);
+}
+.del_btn::after {
+  border-radius: 0;
+}
